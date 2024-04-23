@@ -11,3 +11,28 @@ function flippingBits(n: number): number {
 }
 
 console.log(flippingBits(9));
+
+// -------------------------------------------------
+
+function diagonalDifference(arr: number[][]): number {
+  let leftDiagonal = 0;
+  let rightDiagonal = 0;
+  for (let i = 0; i < arr.length; i++) {
+    leftDiagonal += arr[i][i];
+  }
+  let j = arr.length - 1;
+  for (let i = 0; i < arr.length; i++) {
+    rightDiagonal += arr[i][j];
+    j--;
+  }
+
+  return Math.abs(leftDiagonal - rightDiagonal);
+}
+
+console.log(
+  diagonalDifference([
+    [1, 2, 3],
+    [4, 5, 6],
+    [9, 8, 9],
+  ])
+);
