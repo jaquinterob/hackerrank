@@ -112,3 +112,24 @@ function countingValleys(steps: number, path: string): number {
 
 console.log(countingValleys(12, 'DDUUUUDDDDUU'));
 
+
+// ----------------------------------------------
+
+function pangrams(s: string): string {
+  const alphabetSet: Set<string> = new Set([...'abcdefghijklmnopqrstuvwxyz']);
+  const sentenceSet: Set<string> = new Set(s.toLowerCase().replace(/ /g, ''));
+  for (const letter of alphabetSet) {
+    if (!sentenceSet.has(letter)) {
+      return 'not pangram';
+    }
+  }
+  return 'pangram';
+}
+
+console.log(
+  pangrams('We promptly judged antique ivory buckles for the next prize')
+);
+
+// ----------------------------------------------
+
+
