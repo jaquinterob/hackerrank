@@ -132,4 +132,21 @@ console.log(
 
 // ----------------------------------------------
 
+function marsExploration(s: string): number {
+  const segments: string[] = s.toUpperCase().match(/.{1,3}/g) || [];
+  let counter = 0;
+  segments.forEach((segment) => {
+    console.log(segment)
+    counter += segment[0] !== 'S' ? 1 : 0;
+    counter += segment[1] !== 'O' ? 1 : 0;
+    counter += segment[2] !== 'S' ? 1 : 0;
+  });
+  return counter;
+}
+
+console.log(marsExploration('SOSSPSSQSSOR'));
+
+// ----------------------------------------------
+
+
 
